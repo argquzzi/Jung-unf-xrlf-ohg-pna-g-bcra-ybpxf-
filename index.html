@@ -30,6 +30,10 @@
         .container {
             text-align: center;
         }
+
+        audio {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +45,15 @@
     <script>
         document.getElementById("answer").addEventListener("keydown", function(event) {
             if (event.key === "Enter" && this.value.trim().toLowerCase() === "piano") {
-                document.getElementById("result").textContent = "Can I get Samsung Galaxy S26 Ultra 5G 256 Gt";
+                
+                const result = document.getElementById("result");
+                result.innerHTML = ""; // tyhjennä vanha sisältö
+
+                const audio = document.createElement("audio");
+                audio.controls = true;
+                audio.src = "Can I get Samsung Galaxy S26 Ultra 5G 256 Gt.wav";
+
+                result.appendChild(audio);
             }
         });
     </script>
