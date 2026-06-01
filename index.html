@@ -45,13 +45,14 @@
     <script>
         document.getElementById("answer").addEventListener("keydown", function(event) {
             if (event.key === "Enter" && this.value.trim().toLowerCase() === "piano") {
-                
+
                 const result = document.getElementById("result");
-                result.innerHTML = ""; // tyhjennä vanha sisältö
+                result.innerHTML = "";
 
                 const audio = document.createElement("audio");
+                audio.src = "./samsung.wav";
                 audio.controls = true;
-                audio.src = "Can I get Samsung Galaxy S26 Ultra 5G 256 Gt.wav";
+                audio.autoplay = true;
 
                 result.appendChild(audio);
             }
